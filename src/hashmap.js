@@ -4,7 +4,7 @@ import { LinkedList } from './linkedlist';
 class HashMap {
   constructor() {
     this.capacity = 16;
-    this.loadFactor = 0.8;
+    this.loadFactor = 0.4;
     this.container = [];
   }
 
@@ -80,7 +80,6 @@ class HashMap {
       return null;
     }
 
-    console.log(hashCode);
     if (this.container[hashCode].contains(key)) {
       let keyIndex = this.container[hashCode].find(key);
       let node = this.container[hashCode].at(keyIndex);
