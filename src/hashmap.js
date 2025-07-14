@@ -75,18 +75,26 @@ class HashMap {
   }
   get(key) {
     const hashCode = this.hash(key);
+
+    if (!Object.prototype.hasOwnProperty.call(this.container, hashCode)) {
+      return null;
+    }
+
     console.log(hashCode);
     if (this.container[hashCode].contains(key)) {
       let keyIndex = this.container[hashCode].find(key);
       let node = this.container[hashCode].at(keyIndex);
       return node.value;
     } else {
-      console.log('it never ran');
       return null;
     }
   }
   has(key) {
     const hashCode = this.hash(key);
+
+    if (!Object.prototype.hasOwnProperty.call(this.container, hashCode)) {
+      return false;
+    }
     if (this.container[hashCode].contains(key)) {
       return true;
     } else {
@@ -96,6 +104,9 @@ class HashMap {
 
   remove(key) {
     const hashCode = this.hash(key);
+    if (!Object.prototype.hasOwnProperty.call(this.container, hashCode)) {
+      return false;
+    }
     if (this.container[hashCode].contains(key)) {
       let keyIndex = this.container[hashCode].find(key);
       this.container[hashCode].removeAt(keyIndex);
