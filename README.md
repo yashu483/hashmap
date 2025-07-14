@@ -1,4 +1,5 @@
 # HashMap
+[click here to try code in devtool console](https://yashu483.github.io/hashmap/)
 
 ## Introduction:
 
