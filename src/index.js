@@ -2,9 +2,8 @@
 
 import { HashMap } from './hashmap';
 
-const myMap = new HashMap();
-
-console.log(myMap.hash('Sita'));
+// add HashMap constructor to window so that it can be used in console
+window.HashMap = HashMap;
 
 const test = new HashMap(); // or HashMap() if using a factory
 
@@ -20,3 +19,5 @@ test.set('ice cream', 'white');
 test.set('jacket', 'blue');
 test.set('kite', 'pink');
 test.set('lion', 'golden');
+
+window.test = test;

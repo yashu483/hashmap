@@ -74,8 +74,9 @@ class LinkedList {
   }
 
   contains(key) {
+    console.log(this.head);
     const check = function check(node) {
-      if (node.next === null && node.value !== key) {
+      if (node.next === null && node.key !== key) {
         return false;
       } else if (node.key === key) {
         return true;

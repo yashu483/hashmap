@@ -75,11 +75,13 @@ class HashMap {
   }
   get(key) {
     const hashCode = this.hash(key);
+    console.log(hashCode);
     if (this.container[hashCode].contains(key)) {
       let keyIndex = this.container[hashCode].find(key);
       let node = this.container[hashCode].at(keyIndex);
       return node.value;
     } else {
+      console.log('it never ran');
       return null;
     }
   }
