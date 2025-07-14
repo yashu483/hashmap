@@ -109,7 +109,43 @@ class HashMap {
   clear() {
     this.container = [];
   }
-  keys() {}
+  keys() {
+    let arr = [];
+    this.container.forEach((item, index) => {
+      if (Object.prototype.hasOwnProperty.call(this.container, index)) {
+        function returnKeys(node, array) {
+          if (node.next === null) {
+            array.push(node.key);
+            return;
+          } else {
+            array.push(node.key);
+            returnKeys(node.next, array);
+          }
+        }
+        returnKeys(item.head, arr);
+      }
+    });
+    return arr;
+  }
+
+  values() {
+    let arr = [];
+    this.container.forEach((item, index) => {
+      if (Object.prototype.hasOwnProperty.call(this.container, index)) {
+        function returnKeys(node, array) {
+          if (node.next === null) {
+            array.push(node.value);
+            return;
+          } else {
+            array.push(node.value);
+            returnKeys(node.next, array);
+          }
+        }
+        returnKeys(item.head, arr);
+      }
+    });
+    return arr;
+  }
 }
 
 export { HashMap };
