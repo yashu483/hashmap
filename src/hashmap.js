@@ -4,7 +4,7 @@ import { LinkedList } from './linkedlist';
 class HashMap {
   constructor() {
     this.capacity = 16;
-    this.loadFactor = 0.4;
+    this.loadFactor = 0.8;
     this.container = [];
   }
 
