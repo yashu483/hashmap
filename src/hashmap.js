@@ -83,6 +83,14 @@ class HashMap {
       return null;
     }
   }
+  has(key) {
+    const hashCode = this.hash(key);
+    if (this.container[hashCode].contains(key)) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 }
 
 export { HashMap };
