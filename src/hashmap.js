@@ -91,6 +91,21 @@ class HashMap {
       return false;
     }
   }
+
+  remove(key) {
+    const hashCode = this.hash(key);
+    if (this.container[hashCode].contains(key)) {
+      let keyIndex = this.container[hashCode].find(key);
+      this.container[hashCode].removeAt(keyIndex);
+      if (this.container[hashCode].size === 0) {
+        this.container.splice(hashCode, 1);
+        return true;
+      }
+      return true;
+    } else {
+      return false;
+    }
+  }
 }
 
 export { HashMap };
