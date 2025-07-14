@@ -1,7 +1,7 @@
 {
-  "name": "template",
+  "name": "hashmap",
   "version": "1.0.0",
-  "description": "a template",
+  "description": "DSA practice: creating a hashmap data structure using javascript",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
