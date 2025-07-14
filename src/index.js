@@ -4,4 +4,4 @@ import { HashMap } from './hashmap';
 
 const myMap = new HashMap();
 
-console.log(myMap.hash(''));
+console.log(myMap.hash('Sita'));
