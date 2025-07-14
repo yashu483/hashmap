@@ -73,11 +73,11 @@ class LinkedList {
     this.tail = remove(this.head);
   }
 
-  contains(value) {
+  contains(key) {
     const check = function check(node) {
-      if (node.next === null && node.value !== value) {
+      if (node.next === null && node.value !== key) {
         return false;
-      } else if (node.value === value) {
+      } else if (node.key === key) {
         return true;
       } else {
         return check(node.next);
@@ -86,12 +86,12 @@ class LinkedList {
     return check(this.head);
   }
 
-  find(value) {
+  find(key) {
     let count = 0;
     const check = function check(node) {
-      if (node.next === null && node.value !== value) {
+      if (node.next === null && node.key !== key) {
         return null;
-      } else if (node.value === value) {
+      } else if (node.key === key) {
         return count;
       } else {
         count += 1;

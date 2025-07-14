@@ -61,8 +61,26 @@ class HashMap {
       const list = new LinkedList();
       list.append(key, value);
       this.container[hashCode] = list;
+      return;
     } else {
-      this.container[hashCode].append(key, value);
+      if (this.container[hashCode].contains(key)) {
+        let valueIndex = this.container[hashCode].find(key);
+        this.container[hashCode].insertAt(key, value, valueIndex);
+        return;
+      } else {
+        this.container[hashCode].append(key, value);
+        return;
+      }
+    }
+  }
+  get(key) {
+    const hashCode = this.hash(key);
+    if (this.container[hashCode].contains(key)) {
+      let keyIndex = this.container[hashCode].find(key);
+      let node = this.container[hashCode].at(keyIndex);
+      return node.value;
+    } else {
+      return null;
     }
   }
 }
