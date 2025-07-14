@@ -106,6 +106,10 @@ class HashMap {
       return false;
     }
   }
+  clear() {
+    this.container = [];
+  }
+  keys() {}
 }
 
 export { HashMap };
